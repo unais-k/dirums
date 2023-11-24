@@ -8,6 +8,7 @@ import {
     vastuart,
     modernAbstract,
 } from "../assets/art";
+import { butt, deer, horse, tiger } from "../assets/card";
 
 export const navLinks = [
     {
@@ -68,5 +69,36 @@ export const artSection = [
         id: 8,
         title: "Modern Abstracts",
         img: modernAbstract,
+    },
+];
+
+export const BestSeller = [
+    {
+        id: 1,
+        title: "Butter Fly",
+        img: butt,
+        price: "20,000.00",
+        author: "Amit Chaudary",
+    },
+    {
+        id: 2,
+        title: "Tiger",
+        img: tiger,
+        price: "20,000.00",
+        author: "Amit Chaudary",
+    },
+    {
+        id: 3,
+        title: "Deer",
+        img: deer,
+        price: "20,000.00",
+        author: "Amit Chaudary",
+    },
+    {
+        id: 4,
+        title: "Horse",
+        img: horse,
+        price: "20,000.00",
+        author: "Amit Chaudary",
     },
 ];

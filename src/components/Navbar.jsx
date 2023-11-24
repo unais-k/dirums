@@ -41,15 +41,9 @@ const Navbar = () => {
                     </div>
                     <div className="gap-x-5 flex">
                         <a href="/wishlist" className="relative">
-                            <div className="w-5 h-5 rounded-full bg-[#ffcc7e] flex justify-center items-center absolute left-4 -top-1">
-                                <p className="text-black font-semibold text-sm">0</p>
-                            </div>
                             <i className="far fa-heart text-2xl text-[#ffcc7e]"></i>
                         </a>
                         <a href="/cart" className="relative mt-1">
-                            <div className="w-5 h-5 rounded-full bg-[#ffcc7e] flex justify-center items-center absolute left-4 -top-2">
-                                <p className="text-black font-semibold text-sm">0</p>
-                            </div>
                             <svg
                                 fill="#ffcc7e"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +75,7 @@ const Navbar = () => {
                             <rect y="60" width="100" height="10"></rect>
                         </svg>
                         {/* 3 div */}
-                        <div className="top-0 right-0 w-full bg-white p-10 pt-16 pl-10 text-white fixed h-full z-40 ease-in-out duration-300 -translate-x-[999px]">
+                        <div className="top-0 right-0 w-full bg-white p-10 pt-16 pl-10 text-white fixed h-screen z-40 ease-in-out duration-300 -translate-x-[999px]">
                             <div>
                                 {/* 3 div */}
                                 <div className="flex w-full justify-between items-center py-2 rounded-sm border-b-[1px]">

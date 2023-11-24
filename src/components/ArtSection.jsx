@@ -7,22 +7,20 @@ const ArtSection = () => {
                 {artSection.length >= 0 &&
                     artSection.map((item) => {
                         return (
-                            <>
-                                <div key={item.id} className="flex items-center justify-center w-fit">
-                                    <div className="md:mb-5 hover:bg-gray-50 hover:shadow-md transition ease-in-out duration-300 p-3 md:p-5">
-                                        <img
-                                            width="180"
-                                            height="180"
-                                            loading="lazy"
-                                            src={item.img}
-                                            className="w-[11.5rem] h-auto object-contain transition ease-in-out duration-250 rounded-full"
-                                        />
-                                        <p className="font-helvetica text-center font-semibold lg:text-base text-sm">
-                                            {item.title}
-                                        </p>
-                                    </div>
+                            <div key={item.id} className="flex items-center justify-center w-fit">
+                                <div className="md:mb-5 hover:bg-gray-50 hover:shadow-md transition ease-in-out duration-300 p-3 md:p-5">
+                                    <img
+                                        width="180"
+                                        height="180"
+                                        loading="lazy"
+                                        src={item.img}
+                                        className="w-[11.5rem] h-auto object-contain transition ease-in-out duration-250 rounded-full"
+                                    />
+                                    <p className="font-helvetica text-center font-semibold lg:text-base text-sm">
+                                        {item.title}
+                                    </p>
                                 </div>
-                            </>
+                            </div>
                         );
                     })}
             </div>
