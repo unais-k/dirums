@@ -15,10 +15,10 @@ const Navbar = () => {
                         <div className="ml-8 mt-2 md:block rounded-md bg-[#1e1e1e] outline-none text-[#ffcc7e] tracking-wider"></div>
                     </div>
                     <div className=" w-full pl-4 pr-24 flex space-x-3">
-                        <div className="relative grow">
+                        <div className="relative grow bg-white rounded-md">
                             <input
                                 type="text"
-                                className="rounded-md outline-none py-3 pl-2 caret-[#eba352] text-[#ba8249] text-sm tracking-wide h-8 w-full"
+                                className="rounded-md outline-none ms-10 py-3 pl-2 text-[#ba8249] text-sm tracking-wide h-8 w-full"
                                 placeholder="Search for artworks, artists, themes and many more"
                                 required=""
                                 id="search"
@@ -27,13 +27,13 @@ const Navbar = () => {
                                 width="19"
                                 height="19"
                                 viewBox="0 0 19 19"
-                                fill="none"
+                                fill="#000000"
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="absolute top-1.5 right-4 active:animate-spin hover:cursor-pointer hover:scale-110"
+                                className="absolute top-1.5 left-4 active:animate-spin hover:cursor-pointer hover:scale-110"
                             >
                                 <path
                                     d="M13.1538 8.03846C13.1538 6.63021 12.6533 5.42558 11.6523 4.42458C10.6513 3.42358 9.44671 2.92308 8.03846 2.92308C6.63021 2.92308 5.42558 3.42358 4.42458 4.42458C3.42358 5.42558 2.92308 6.63021 2.92308 8.03846C2.92308 9.44671 3.42358 10.6513 4.42458 11.6523C5.42558 12.6533 6.63021 13.1538 8.03846 13.1538C9.44671 13.1538 10.6513 12.6533 11.6523 11.6523C12.6533 10.6513 13.1538 9.44671 13.1538 8.03846ZM19 17.5385C19 17.9343 18.8554 18.2768 18.5661 18.5661C18.2768 18.8554 17.9343 19 17.5385 19C17.1274 19 16.7849 18.8554 16.5108 18.5661L12.5944 14.6611C11.2318 15.605 9.71314 16.0769 8.03846 16.0769C6.94992 16.0769 5.90895 15.8657 4.91557 15.4432C3.92218 15.0207 3.06581 14.4498 2.34645 13.7305C1.6271 13.0111 1.05619 12.1547 0.633714 11.1614C0.211238 10.168 0 9.127 0 8.03846C0 6.94992 0.211238 5.90895 0.633714 4.91557C1.05619 3.92218 1.6271 3.06581 2.34645 2.34645C3.06581 1.6271 3.92218 1.05619 4.91557 0.633714C5.90895 0.211238 6.94992 0 8.03846 0C9.127 0 10.168 0.211238 11.1614 0.633714C12.1547 1.05619 13.0111 1.6271 13.7305 2.34645C14.4498 3.06581 15.0207 3.92218 15.4432 4.91557C15.8657 5.90895 16.0769 6.94992 16.0769 8.03846C16.0769 9.71314 15.605 11.2318 14.6611 12.5944L18.5775 16.5108C18.8592 16.7925 19 17.135 19 17.5385Z"
-                                    fill="#EBA352"
+                                    fill="#000000"
                                 ></path>
                             </svg>
                             <div className="results px-2 absolute bg-white w-full z-[999] hidden"></div>
@@ -59,7 +59,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className=" bg-[#1e1e1e] px-5 pt-1 pb-1 md:hidden">
+            <div className="bg-[#1e1e1e] px-5 pt-1 pb-1 md:hidden">
                 <div className="flex items-center flex-col md:flex-row">
                     {/* two div */}
                     <div className="flex w-full justify-between items-center">
@@ -141,86 +141,83 @@ const Navbar = () => {
                             </div>
 
                             {/* a tag start here */}
-                            <a href="/artworks/wildlife-paintings">
-                                <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                    <p className="text-black font-bold">Wildlife Paintings</p>
-                                    <svg
-                                        stroke="currentColor"
-                                        fill="currentColor"
-                                        strokeWidth="0"
-                                        viewBox="0 0 16 16"
-                                        color="black"
-                                        height="1em"
-                                        width="1em"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                        ></path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="/artworks/table-decor">
-                                <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                    <p className="text-black font-bold">Table Decor</p>
-                                    <svg
-                                        stroke="currentColor"
-                                        fill="currentColor"
-                                        strokeWidth="0"
-                                        viewBox="0 0 16 16"
-                                        color="black"
-                                        height="1em"
-                                        width="1em"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                        ></path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="/artworks/table-decor">
-                                <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                    <p className="text-black font-bold">Table Decor</p>
-                                    <svg
-                                        stroke="currentColor"
-                                        fill="currentColor"
-                                        strokeWidth="0"
-                                        viewBox="0 0 16 16"
-                                        color="black"
-                                        height="1em"
-                                        width="1em"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                        ></path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a href="/artworks/table-decor">
-                                <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                    <p className="text-black font-bold">Table Decor</p>
-                                    <svg
-                                        stroke="currentColor"
-                                        fill="currentColor"
-                                        strokeWidth="0"
-                                        viewBox="0 0 16 16"
-                                        color="black"
-                                        height="1em"
-                                        width="1em"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            fillRule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                        ></path>
-                                    </svg>
-                                </div>
-                            </a>
+
+                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
+                                <p className="text-black font-bold">Wildlife Paintings</p>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    strokeWidth="0"
+                                    viewBox="0 0 16 16"
+                                    color="black"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                    ></path>
+                                </svg>
+                            </div>
+
+                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
+                                <p className="text-black font-bold">Table Decor</p>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    strokeWidth="0"
+                                    viewBox="0 0 16 16"
+                                    color="black"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                    ></path>
+                                </svg>
+                            </div>
+
+                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
+                                <p className="text-black font-bold">Table Decor</p>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    strokeWidth="0"
+                                    viewBox="0 0 16 16"
+                                    color="black"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                    ></path>
+                                </svg>
+                            </div>
+
+                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
+                                <p className="text-black font-bold">Table Decor</p>
+                                <svg
+                                    stroke="currentColor"
+                                    fill="currentColor"
+                                    strokeWidth="0"
+                                    viewBox="0 0 16 16"
+                                    color="black"
+                                    height="1em"
+                                    width="1em"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        fillRule="evenodd"
+                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                                    ></path>
+                                </svg>
+                            </div>
+
                             {/* a tag end here */}
                         </div>
                         <div className="ml-5">
@@ -230,15 +227,9 @@ const Navbar = () => {
                         </div>
                         <div className=" gap-x-4 flex mt-3 items-center">
                             <a href="/wishlist" className="relative">
-                                <div className="w-3 h-3 rounded-full bg-[#ffcc7e] flex justify-center items-center absolute left-3 top-0">
-                                    <p className="text-black text-[9px]">0</p>
-                                </div>
                                 <i className="far fa-heart text-base text-[#ffcc7e]"></i>
                             </a>
                             <a href="/cart" className="relative">
-                                <div className="w-3 h-3 rounded-full bg-[#ffcc7e] flex justify-center items-center absolute left-2 top-0">
-                                    <p className="text-black text-[9px]">0</p>
-                                </div>
                                 <svg
                                     fill="#ffcc7e"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +272,7 @@ const Navbar = () => {
                     <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Artworks for wall
                     </label>
-                    <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
+                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
                         <li>
                             <a href="/artworks/medium/acrylic-paintings">Acrylic painting</a>
                         </li>
@@ -297,13 +288,13 @@ const Navbar = () => {
                         <li className="font-bold">
                             <a href="/artworks">View All</a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="dropdown dropdown-hover bg-transparent hover:bg-[#cfa374]">
                     <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Folk art &amp; craft
                     </label>
-                    <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
+                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
                         <li>
                             <a href="/artworks/mandala-art">Mandala art</a>
                         </li>
@@ -322,7 +313,7 @@ const Navbar = () => {
                         <li className="font-bold">
                             <a href="/artworks/folkart">view all</a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="dropdown dropdown-hover bg-transparent hover:bg-white hover:text-[#CC8E51]">
                     <a href="/artworks/wildlife-paintings">
@@ -335,7 +326,7 @@ const Navbar = () => {
                     <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Home &amp; Living
                     </label>
-                    <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
+                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
                         <li>
                             <a href="/artworks/table-decor">Table decor</a>
                         </li>
@@ -348,7 +339,7 @@ const Navbar = () => {
                         <li>
                             <a href="/collection/diwali-home-decor">Diwali decor</a>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 <div className="dropdown dropdown-hover bg-transparent hover:bg-white hover:text-[#CC8E51]">
                     <a href="/artworks/home-office-art/paintings-artworks-for-living-room">
@@ -361,12 +352,12 @@ const Navbar = () => {
                     <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Religious Paintings
                     </label>
-                    <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
+                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
                         <li>Radha Krishna</li>
                         <li>Buddha</li>
                         <li>Lord Ganesh</li>
                         <li>Hanuman</li>
-                    </ul>
+                    </ul> */}
                 </div>
             </div>
         </div>
