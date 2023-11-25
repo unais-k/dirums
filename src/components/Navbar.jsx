@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className=" bg-[#1e1e1e] lg:px-20 px-4 pt-3 pb-3 hidden md:block">
                 <div className="flex lg:space-x-4 items-center lg:px-24 justify-between flex-col md:flex-row">
                     <div className="flex items-center justify-center h-[40px]">
-                        <a href="/">
+                        <a href="">
                             <img src={logo} alt="DiRums LOGO " className="w-[200px]" height="auto" />
                         </a>
                         <div className="ml-8 mt-2 md:block rounded-md bg-[#1e1e1e] outline-none text-[#ffcc7e] tracking-wider"></div>

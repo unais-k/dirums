@@ -9,28 +9,8 @@ import {
     modernAbstract,
 } from "../assets/art";
 import { butt, deer, horse, tiger } from "../assets/card";
-import { camel, elephant, horse as kuthara } from "../assets/gallery";
 import { ducks, flamingo, old, unicorn, wild } from "../assets/newArrival";
 import { cod, easy, genuine, secured, shipping } from "../assets/svg";
-
-export const navLinks = [
-    {
-        id: "home",
-        title: "Home",
-    },
-    {
-        id: "features",
-        title: "Features",
-    },
-    {
-        id: "product",
-        title: "Product",
-    },
-    {
-        id: "clients",
-        title: "Clients",
-    },
-];
 
 export const artSection = [
     {
@@ -278,24 +258,6 @@ export const swiperConst = [
         title: "Free Shipping",
         img: shipping,
         p: "Worldwide",
-    },
-];
-
-export const galleryConstants = [
-    {
-        id: 4,
-        title: "Below 10,000",
-        img: camel,
-    },
-    {
-        id: 5,
-        title: "From 10,000-20,000",
-        img: elephant,
-    },
-    {
-        id: 6,
-        title: "Above 20,000",
-        img: kuthara,
     },
 ];
 
