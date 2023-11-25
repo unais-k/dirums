@@ -4,9 +4,9 @@ const Swiper = () => {
     return (
         <div className="sm:px-16 ps-4">
             <div className="flex justify-between items-center w-full mt-5 overflow-auto no-scrollbar">
-                {swiperConst.map((item) => {
+                {swiperConst.map((item, i) => {
                     return (
-                        <div key={item.id} className=" w-52 me-3 sm:me-10">
+                        <div key={i} className=" w-52 me-3 sm:me-10">
                             <div className="flex gap-y-4 flex-col items-center py-3 w-full h-full justify-center gap-x-3">
                                 <img src={item.img} className="w-8 sm:w-10" />
                                 <div className="flex flex-col items-center gap-1 w-56 h-11">

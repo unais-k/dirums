@@ -1,6 +1,11 @@
+import { useState } from "react";
 import logo from "../assets/logo.webp";
+import { navArrow } from "../assets/svg";
+import { navItems } from "../constants";
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="">
             <div className="capitalize bg-[#1e1e1e] text-white tracking-wider leading-6 mx-auto flex justify-center items-center text-[8px] md:text-[13px]">
@@ -40,10 +45,10 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="gap-x-5 flex">
-                        <a href="/wishlist" className="relative">
+                        <a href="/" className="relative">
                             <i className="far fa-heart text-2xl text-[#ffcc7e]"></i>
                         </a>
-                        <a href="/cart" className="relative mt-1">
+                        <a href="/" className="relative mt-1">
                             <svg
                                 fill="#ffcc7e"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +71,7 @@ const Navbar = () => {
                         <svg
                             className="z-30 flex items-center cursor-pointer"
                             fill="#ffcc7e"
+                            onClick={() => setIsOpen(!isOpen)}
                             viewBox="0 0 100 80"
                             width="16"
                             height="24"
@@ -74,162 +80,45 @@ const Navbar = () => {
                             <rect y="30" width="100" height="10"></rect>
                             <rect y="60" width="100" height="10"></rect>
                         </svg>
+
                         {/* 3 div */}
-                        <div className="top-0 right-0 w-full bg-white p-10 pt-16 pl-10 text-white fixed h-screen z-40 ease-in-out duration-300 -translate-x-[999px]">
-                            <div>
-                                {/* 3 div */}
-                                <div className="flex w-full justify-between items-center py-2 rounded-sm border-b-[1px]">
-                                    <div className="flex pl-2">
-                                        <div className="text-black font-bold">Artworks for wall</div>
-                                    </div>
-                                    <div className="flex items-center justify-center">
-                                        <svg
-                                            stroke="currentColor"
-                                            fill="currentColor"
-                                            strokeWidth="0"
-                                            viewBox="0 0 24 24"
-                                            className="w-8 h-8 text-black"
-                                            height="1em"
-                                            width="1em"
-                                            xmlns="http://www.w3.org/2000/svg"
+                        {isOpen && (
+                            <div className="top-0 left-0 w-3\4 ss:w-1/2 bg-white p-3 pt-5 ss:pt-10 sm:p-10 text-white fixed min-h-screen z-40 ease-in-out duration-500">
+                                <button
+                                    onClick={() => setIsOpen(!isOpen)}
+                                    className="flex text-4xl text-[#ffcc7e] items-center cursor-pointer fixed left-5 transition ease-in-out duration-300 ss:left-10 top-3 ss:top-6 z-50"
+                                >
+                                    x
+                                </button>
+                                {/* nav-item start here */}
+                                {navItems.map((item, i) => {
+                                    return (
+                                        <div
+                                            key={i}
+                                            onClick={() => setIsOpen(!isOpen)}
+                                            className="my-5 ml-2 border-b-[1px] gap-3 py-3 flex justify-between items-center pr-3"
                                         >
-                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
-                                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div className="flex w-full justify-between items-center py-2 rounded-sm border-b-[1px]">
-                                    <div className="flex pl-2">
-                                        <div className="text-black font-bold">Indian Painting</div>
-                                    </div>
-                                    <div className="flex items-center justify-center">
-                                        <svg
-                                            stroke="currentColor"
-                                            fill="currentColor"
-                                            strokeWidth="0"
-                                            viewBox="0 0 24 24"
-                                            className="w-8 h-8 text-black"
-                                            height="1em"
-                                            width="1em"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
-                                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div className="flex w-full justify-between items-center py-2 rounded-sm border-b-[1px]">
-                                    <div className="flex pl-2">
-                                        <div className="text-black font-bold">Religious Paintings</div>
-                                    </div>
-                                    <div className="flex items-center justify-center">
-                                        <svg
-                                            stroke="currentColor"
-                                            fill="currentColor"
-                                            strokeWidth="0"
-                                            viewBox="0 0 24 24"
-                                            className="w-8 h-8 text-black"
-                                            height="1em"
-                                            width="1em"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path fill="none" d="M0 0h24v24H0V0z"></path>
-                                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
-                                        </svg>
-                                    </div>
-                                </div>
+                                            <p className="text-black text-[12px] font-semibold sm:font-bold">
+                                                {item.title}
+                                            </p>
+                                            <img src={navArrow} alt="arrow" />
+                                        </div>
+                                    );
+                                })}
+
+                                {/* nav-item end here */}
                             </div>
-
-                            {/* a tag start here */}
-
-                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                <p className="text-black font-bold">Wildlife Paintings</p>
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    color="black"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                    ></path>
-                                </svg>
-                            </div>
-
-                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                <p className="text-black font-bold">Table Decor</p>
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    color="black"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                    ></path>
-                                </svg>
-                            </div>
-
-                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                <p className="text-black font-bold">Table Decor</p>
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    color="black"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                    ></path>
-                                </svg>
-                            </div>
-
-                            <div className="my-5 ml-2 border-b-[1px] py-3 flex justify-between items-center pr-3">
-                                <p className="text-black font-bold">Table Decor</p>
-                                <svg
-                                    stroke="currentColor"
-                                    fill="currentColor"
-                                    strokeWidth="0"
-                                    viewBox="0 0 16 16"
-                                    color="black"
-                                    height="1em"
-                                    width="1em"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
-                                    ></path>
-                                </svg>
-                            </div>
-
-                            {/* a tag end here */}
-                        </div>
+                        )}
                         <div className="ml-5">
                             <a href="/">
                                 <img className="w-16 h-auto mt-2" src={logo} alt="logo" />
                             </a>
                         </div>
                         <div className=" gap-x-4 flex mt-3 items-center">
-                            <a href="/wishlist" className="relative">
+                            <a href="" className="relative">
                                 <i className="far fa-heart text-base text-[#ffcc7e]"></i>
                             </a>
-                            <a href="/cart" className="relative">
+                            <a href="" className="relative">
                                 <svg
                                     fill="#ffcc7e"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -258,8 +147,8 @@ const Navbar = () => {
                                     fill="#000"
                                 ></path>
                             </svg>
-                            <a href="#">
-                                <div className="rounded-md bg-white outline-none py-2 pl-8 font-content caret-[#eba352] text-gray-500 text-[10px] tracking-wide h-8 w-full">
+                            <a href="">
+                                <div className="rounded-md bg-white outline-none py-2 pl-8 font-content text-gray-500 text-[10px] tracking-wide h-8 w-full">
                                     <p>Search for artworks, artists, themes and many more</p>
                                 </div>
                             </a>
@@ -267,97 +156,37 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
+            {/* navbar hidden content end here */}
             <div className=" w-full bg-[#CC8E51] hidden md:flex items-center justify-center text-white">
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-[#cfa374]">
-                    <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
+                <div className="bg-transparent hover:bg-[#cfa374]">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Artworks for wall
                     </label>
-                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
-                        <li>
-                            <a href="/artworks/medium/acrylic-paintings">Acrylic painting</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/medium/watercolor-paintings-for-sale">Watercolor painting</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/medium/oil-paintings">Oil painting</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/medium/mix-media-paintings">Mixed Media Painting</a>
-                        </li>
-                        <li className="font-bold">
-                            <a href="/artworks">View All</a>
-                        </li>
-                    </ul> */}
                 </div>
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-[#cfa374]">
-                    <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
+                <div className="bg-transparent hover:bg-[#cfa374]">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Folk art &amp; craft
                     </label>
-                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
-                        <li>
-                            <a href="/artworks/mandala-art">Mandala art</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/madhubani-paintings">Madhubani art</a>
-                        </li>
-                        <li>
-                            <a href="/collection/dhokra-metal-craft">Dhokra art</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/gond-art">Gond art</a>
-                        </li>
-                        <li>
-                            <a href="/artworks/pattachitra-painting">Pattachitra art</a>
-                        </li>
-                        <li className="font-bold">
-                            <a href="/artworks/folkart">view all</a>
-                        </li>
-                    </ul> */}
                 </div>
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-white hover:text-[#CC8E51]">
-                    <a href="/artworks/wildlife-paintings">
-                        <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-white hover:text-[#CC8E51]">
-                            Wildlife paintings
-                        </label>
-                    </a>
+                <div className="bg-transparent hover:bg-[#cfa374]">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none  hover:bg-[#cfa374] ">
+                        Wildlife paintings
+                    </label>
                 </div>
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-[#cfa374]">
-                    <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
+                <div className="bg-transparent hover:bg-[#cfa374]">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Home &amp; Living
                     </label>
-                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
-                        <li>
-                            <a href="/artworks/table-decor">Table decor</a>
-                        </li>
-                        <li>
-                            <a href="/collection/resin-art">Resin art</a>
-                        </li>
-                        <li>
-                            <a href="/collection/lippan-art">Lippan art</a>
-                        </li>
-                        <li>
-                            <a href="/collection/diwali-home-decor">Diwali decor</a>
-                        </li>
-                    </ul> */}
                 </div>
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-white hover:text-[#CC8E51]">
-                    <a href="/artworks/home-office-art/paintings-artworks-for-living-room">
-                        <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base normal-case text-[14px] bg-transparent text-white border-none hover:bg-white hover:text-[#CC8E51]">
-                            Painting for living room
-                        </label>
-                    </a>
+                <div className="bg-transparent hover:bg-[#cfa374] ">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base normal-case text-[14px] bg-transparent text-white border-none hover:bg-[#cfa374] ">
+                        Painting for living room
+                    </label>
                 </div>
-                <div className="dropdown dropdown-hover bg-transparent hover:bg-[#cfa374]">
-                    <label className="btn rounded-none font-sans min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
+                <div className="bg-transparent hover:bg-[#cfa374]">
+                    <label className="btn rounded-none font-montserrat min-w-[12vw] lg:text-lg md:text-base text-[14px] normal-case bg-transparent text-white border-none hover:bg-[#cfa374]">
                         Religious Paintings
                     </label>
-                    {/* <ul className="dropdown-content menu shadow m-0 p-0 bg-base-100 min-w-full list-disc text-black font-sans font-light text-[16px]">
-                        <li>Radha Krishna</li>
-                        <li>Buddha</li>
-                        <li>Lord Ganesh</li>
-                        <li>Hanuman</li>
-                    </ul> */}
                 </div>
             </div>
         </div>

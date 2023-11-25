@@ -27,14 +27,14 @@ const App = () => {
                     <NewCollection />
                     <div className="w-full px-10">
                         <div className="w-full relative flex justify-start gap-5 items-center flex-row overflow-y-auto no-scrollbar">
-                            {BestSeller.map((item) => {
-                                return <UnitCard key={item.id} item={item} />;
+                            {BestSeller.map((item, i) => {
+                                return <UnitCard key={i} item={item} />;
                             })}
                         </div>
                         <div className="uppercase font-bold py-2 flex justify-end items-center gap-2">
                             view all
-                            <span className="rounded-full bg-[#ba8249] text-white p-2 shadow-md">
-                                <i className="fa-solid fa-arrow-right"></i>
+                            <span className="rounded-full bg-[#ba8249] h-7 w-7 text-white p-2 shadow-md">
+                                <i className="fa-solid fa-arrow-right mb-1 flex justify-center"></i>
                             </span>
                         </div>
                     </div>
@@ -44,14 +44,14 @@ const App = () => {
                         </h2>
                         <hr className="border-[rgb(186,130,73)] border w-1/5 mx-auto my-3"></hr>
                         <div className="w-full relative flex justify-start gap-5 items-center flex-row overflow-y-auto no-scrollbar">
-                            {newArrival.map((item) => {
-                                return <UnitCard key={item.id} item={item} />;
+                            {newArrival.map((item, i) => {
+                                return <UnitCard key={i} item={item} />;
                             })}
                         </div>
                         <div className="uppercase font-bold py-2 flex justify-end items-center gap-2">
                             view all
-                            <span className="rounded-full bg-[#ba8249] text-white p-2 shadow-md">
-                                <i className="fa-solid fa-arrow-right"></i>
+                            <span className="rounded-full bg-[#ba8249] h-7 w-7 text-white p-2 shadow-md">
+                                <i className="fa-solid fa-arrow-right mb-1 flex justify-center"></i>
                             </span>
                         </div>
                     </div>
